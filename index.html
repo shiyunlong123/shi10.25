@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url:"http://localhost:3000/",
+                type:"POST",
+                data:{abc:1},
+                success:function(e){
+                    for(var i=0;i< e.title.length;i++){
+                        $("body").append("<p>"+ e.title[i]+"</p>")
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>
